@@ -6,7 +6,8 @@ interface ListProviderProps {
 
 interface Person {
   name: string;
-  email: string;
+  hobby: string;
+  age: number;
 }
 
 interface ListProviderData {
