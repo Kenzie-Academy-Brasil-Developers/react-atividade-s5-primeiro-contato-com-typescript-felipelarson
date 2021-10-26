@@ -11,7 +11,6 @@ interface Person {
 }
 
 interface ListProviderData {
-    list: Person[];
     newPerson: Person;
     createNewPerson: (person: Person) => void;
 }
@@ -26,17 +25,15 @@ const useList = () =>{
 
 const ListProvider = ({children}: ListProviderProps) =>{
 
-    const [list, setList] = useState<Person[]>([])
     const [newPerson, setNewPerson] = useState<Person>({} as Person)
 
     const createNewPerson = (person: Person) => {
-        setList([...list, person])
         setNewPerson(person)
     }
 
 return(
     <ListContext.Provider value={{
-        createNewPerson, list, newPerson
+        createNewPerson, newPerson
     }}>
         {children}
     </ListContext.Provider>

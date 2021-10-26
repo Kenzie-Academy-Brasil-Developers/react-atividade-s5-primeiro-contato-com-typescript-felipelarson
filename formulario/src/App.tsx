@@ -11,7 +11,7 @@ function App() {
   const [hobby, setHobby] = useState("")
   const [age, setAge] = useState("")
 
-  const {createNewPerson, list, newPerson} = useList()
+  const {createNewPerson, newPerson} = useList()
 
   const handleSubmit = (name: string, hobby: string, age: string) => {
     const person = {name, hobby, age};
@@ -21,8 +21,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Formulário</h1>
-        <Card>
+        <Card title={"Formulário"}>
           <Input placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} />
           <Input placeholder="Hobby" value={hobby} onChange={(e) => setHobby(e.target.value)} />
           <Input placeholder="Age" value={age} onChange={(e) => setAge(e.target.value)} />
@@ -30,16 +29,16 @@ function App() {
           <Button onClick={() => handleSubmit(name, hobby, age)}>Enviar</Button>
         </Card>
 
-        <ul>
-          {list.map((person, idx) => (
-            <li key={idx}>{person.name} - {person.hobby} - {person.age}</li>
-          ))}
-        </ul>
-
-        {/* <h1>Novo Cadastro</h1>
+        <hr/>
+        
+        {(newPerson.name !== undefined) && 
+        <>
+            <h1>{newPerson.name}</h1>
             <p>
-              {newPerson.name} - {newPerson.email}{" "}
-            </p> */}
+              {newPerson.name} - {newPerson.hobby} - {newPerson.age}{" "}
+            </p>
+        </>
+          }
       </header>
     </div>
   );
