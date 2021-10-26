@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Button } from './components/Button';
 import { Card } from './components/Card';
 import { Input } from './components/Input';
 import { useList } from './context/ListProvider';
@@ -23,7 +24,7 @@ function App() {
           <Input placeholder="Nome" onChange={(e) => setName(e.target.value)} />
           <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
           <hr/>
-          <button onClick={() => handleSubmit(name, email)}>Enviar</button>
+          <Button onClick={() => handleSubmit(name, email)}>Enviar</Button>
         </Card>
 
         <ul>
