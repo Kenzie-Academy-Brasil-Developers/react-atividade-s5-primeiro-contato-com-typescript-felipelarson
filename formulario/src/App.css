@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 
 .App-header {
@@ -28,10 +29,11 @@
   text-transform: capitalize;
 }
 
-.App-header > p {
+span {
+  height: 200px;
+  width: 95%;
   display: flex;
   justify-content: flex-start;
-  width: 95%;
 }
 
 /* #008080 */

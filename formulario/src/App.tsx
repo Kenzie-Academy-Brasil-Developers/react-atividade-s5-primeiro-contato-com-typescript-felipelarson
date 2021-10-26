@@ -21,6 +21,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        {(newPerson.name !== undefined) &&   <h1>{newPerson.name}</h1>}
         <Card title={"Formulário"}>
           <Input placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} />
           <Input placeholder="Hobby" value={hobby} onChange={(e) => setHobby(e.target.value)} />
@@ -30,15 +31,13 @@ function App() {
         </Card>
 
         <hr/>
-        
-        {(newPerson.name !== undefined) && 
-        <>
-            <h1>{newPerson.name}</h1>
+        <span style={{height: "200px"}}>
+          {(newPerson.name !== undefined) && 
             <p>
               {newPerson.name} - {newPerson.hobby} - {newPerson.age}{" "}
             </p>
-        </>
-          }
+            }
+        </span>
       </header>
     </div>
   );
