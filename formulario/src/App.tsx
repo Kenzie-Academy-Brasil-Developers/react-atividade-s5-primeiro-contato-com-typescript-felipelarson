@@ -9,11 +9,11 @@ function App() {
 
   const [name, setName] = useState("")
   const [hobby, setHobby] = useState("")
-  const [age, setAge] = useState(0)
+  const [age, setAge] = useState("")
 
   const {createNewPerson, list, newPerson} = useList()
 
-  const handleSubmit = (name: string, hobby: string, age: number) => {
+  const handleSubmit = (name: string, hobby: string, age: string) => {
     const person = {name, hobby, age};
     createNewPerson(person)
   }
@@ -25,7 +25,7 @@ function App() {
         <Card>
           <Input placeholder="Nome" value={name} onChange={(e) => setName(e.target.value)} />
           <Input placeholder="Hobby" value={hobby} onChange={(e) => setHobby(e.target.value)} />
-          <Input type="number" placeholder="Age" value={age} onChange={(e) => setAge(e.target.value)} />
+          <Input placeholder="Age" value={age} onChange={(e) => setAge(e.target.value)} />
           <hr/>
           <Button onClick={() => handleSubmit(name, hobby, age)}>Enviar</Button>
         </Card>
