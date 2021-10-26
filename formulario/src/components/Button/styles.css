@@ -1,0 +1,23 @@
+.button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 12px;
+  justify-content: center;
+  width: 100%;
+}
+
+.button::before {
+  content: "<";
+  margin-right: 6px;
+}
+
+.button::after {
+  content: ">";
+  margin-left: 6px;
+}
+
+.button:hover + .button::before:hover {
+  color: #fff;
+}

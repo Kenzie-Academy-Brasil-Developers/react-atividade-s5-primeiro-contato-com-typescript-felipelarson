@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Formulário</h1>
         <Card>
           <Input placeholder="Nome" onChange={(e) => setName(e.target.value)} />
           <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
@@ -27,7 +28,7 @@ function App() {
           <Button onClick={() => handleSubmit(name, email)}>Enviar</Button>
         </Card>
 
-        <ul>
+        {/* <ul>
           {list.map((person, idx) => (
             <li key={idx}>{person.name} - {person.email}</li>
           ))}
@@ -36,7 +37,7 @@ function App() {
         <h1>Novo Cadastro</h1>
             <p>
               {newPerson.name} - {newPerson.email}{" "}
-            </p>
+            </p> */}
       </header>
     </div>
   );
